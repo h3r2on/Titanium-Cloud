@@ -9,7 +9,7 @@ $<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  */
 
 $config['api_url'] = 'api.cloud.appcelerator.com/v1/';
-$config['app_key'] = 'AzR1xg79bF9GqNBycl7biW1uJbTPDR9j';
+$config['app_key'] = '';
 $config['audit_log'] = 'application/logs/audit.log';
 
 ?>

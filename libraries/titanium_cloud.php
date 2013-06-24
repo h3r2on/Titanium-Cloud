@@ -17,7 +17,7 @@ class Titanium_Cloud {
 	protected $app_key;
 	protected $email;
 	protected $password;
-	protected $_cookie		= '/tmp/appcookie';
+	protected $_cookie = '/tmp/appcookie';
 	protected $_errors;
 
 	function __construct() {
@@ -71,7 +71,7 @@ class Titanium_Cloud {
 				curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 				break;
 			case 'PUT':
-				curl_setopt($ch, CURLOPT_PUT, TRUE);
+				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
 				curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 				break;
 			case 'DELETE':
@@ -104,10 +104,10 @@ class Titanium_Cloud {
 
 			// Set the session data
 			$customdata = array(
-				'id' 				=> $user_info['id'],
-				'email' 		=> $email,
-				'cn' 				=> $user_info['cn'],
-				'role' 			=> $user_info['role'],
+				'id'        => $user_info['id'],
+				'email'     => $email,
+				'cn'        => $user_info['cn'],
+				'role'      => $user_info['role'],
 				'logged_in' => TRUE
 			);
 
@@ -176,8 +176,8 @@ class Titanium_Cloud {
 		$user = $response['response']['users'][0];
 
 		return array(
-			'id' 		=> $user['id'],
-			'cn' 		=> $user['first_name'] . ' ' . $user['last_name'],
+			'id'    => $user['id'],
+			'cn'    => $user['first_name'] . ' ' . $user['last_name'],
 			'role'	=> $user['role'],
 			'email'	=> $user['email']
 		);
