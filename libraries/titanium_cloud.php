@@ -23,7 +23,7 @@ class Titanium_Cloud {
 	function __construct() {
 		$this->ci =& get_instance();
 
-		$this->cookie .= time() .'.txt';
+		$this->_cookie .= time() .'.txt';
 
 		$this->ci->load->config('titanium_cloud');
 		$this->ci->load->library('session');
